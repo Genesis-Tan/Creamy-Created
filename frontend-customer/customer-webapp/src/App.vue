@@ -1,30 +1,87 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-gray-100">
+  <div class="p-4 pb-24 bg-white min-h-screen">
+    <!-- Search Bar -->
+    <div class="mb-4">
+      <input
+        type="text"
+        placeholder="Search everything creamy"
+        class="w-full px-4 py-2 border rounded-full shadow-sm focus:outline-none"
+      />
+    </div>
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow px-6 py-4 sticky top-0 z-50">
-      <ul class="flex gap-6 font-semibold text-gray-700">
-        <li><a href="#" class="hover:text-green-600">Home</a></li>
-        <li><a href="#" class="hover:text-green-600">Burgers</a></li>
-        <li><a href="#" class="hover:text-green-600">Drinks</a></li>
-        <li><a href="#" class="hover:text-green-600">Sides</a></li>
-      </ul>
-    </nav>
+    <!-- Beverages -->
+    <div>
+      <h2 class="text-lg font-semibold mb-2">Beverages</h2>
+      <MenuItem
+        v-for="item in beverages"
+        :key="item.id"
+        :item="item"
+        @update-quantity="updateQuantity"
+      />
+    </div>
 
-    <!-- Main Body -->
-    <main class="flex-grow p-6">
-      <h1 class="text-2xl font-bold mb-4">🍔 Welcome to FastFood Kiosk</h1>
-      <p class="text-gray-600">This is your body content area. Add categories, cart, etc. here.</p>
-    </main>
+    <!-- Meals -->
+    <div class="mt-6">
+      <h2 class="text-lg font-semibold mb-2">Meals</h2>
+      <MenuItem
+        v-for="item in meals"
+        :key="item.id"
+        :item="item"
+        @update-quantity="updateQuantity"
+      />
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-white shadow px-6 py-4 text-center text-sm text-gray-500">
-      © 2025 FastFood Kiosk. All rights reserved.
-    </footer>
-
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-3">
+      <button class="text-blue-500 font-bold">Menu</button>
+      <button class="text-gray-500">Order</button>
+    </div>
   </div>
 </template>
 
 <script setup>
-// You can add script logic here if needed
+import { reactive } from 'vue'
+import MenuItem from './MenuItem.vue'
+
+const beverages = reactive([
+  {
+    id: 1,
+    name: 'Spanish Latte - Dot Coffee Special',
+    description: 'A creamy fusion of bold espresso and sweet milk, crafted for smooth coffee lovers.',
+    price: 265,
+    quantity: 0
+  },
+  {
+    id: 2,
+    name: 'Caramel Macchiato – Yardstick Edition',
+    description: 'Rich espresso layered with milk and golden caramel for that perfect sweet kick.',
+    price: 265,
+    quantity: 0
+  }
+])
+
+const meals = reactive([
+  {
+    id: 3,
+    name: 'Toka Burger',
+    description: 'A juicy, double-stacked classic with melted cheese and all the fixings—made to satisfy any craving.',
+    price: 381,
+    quantity: 0
+  },
+  {
+    id: 4,
+    name: 'Macy’s Burger',
+    description: 'Sweet, savory, and oh-so-cheesy. A comforting burger that hits every flavor note.',
+    price: 358,
+    quantity: 0
+  }
+])
+
+function updateQuantity(id, amount) {
+  const allItems = [...beverages, ...meals]
+  const item = allItems.find(i => i.id === id)
+  if (item) {
+    item.quantity = Math.max(0, item.quantity + amount)
+  }
+}
 </script>
