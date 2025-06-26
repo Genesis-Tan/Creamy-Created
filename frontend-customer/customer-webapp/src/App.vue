@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col min-h-screen bg-gray-100">
-
     <!-- Navbar -->
     <nav class="bg-white shadow px-6 py-4 sticky top-0 z-50">
       <ul class="flex gap-6 font-semibold text-gray-700">
@@ -21,7 +20,6 @@
     <footer class="bg-white shadow px-6 py-4 text-center text-sm text-gray-500">
       © 2025 FastFood Kiosk. All rights reserved.
     </footer>
-
   </div>
 </template>
 
