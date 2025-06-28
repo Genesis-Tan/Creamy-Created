@@ -1,5 +1,7 @@
 <template>
-  <div class="p-4 pb-24 bg-white min-h-screen">
+  <div class="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 bg-white min-h-screen pb-24">
+
+  <div class="p-2">
     <!-- Search Bar -->
     <div class="mb-4">
       <input
@@ -17,17 +19,19 @@
         :key="item.id"
         :item="item"
         @update-quantity="updateQuantity"
+        class = "pt-3"
       />
     </div>
 
     <!-- Meals -->
-    <div class="mt-6">
+    <div class="pt-2">
       <h2 class="text-lg font-semibold mb-2">Meals</h2>
       <MenuItem
         v-for="item in meals"
         :key="item.id"
         :item="item"
         @update-quantity="updateQuantity"
+        class = "pt-3"
       />
     </div>
 
@@ -37,6 +41,7 @@
       <button class="text-gray-500">Order</button>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
