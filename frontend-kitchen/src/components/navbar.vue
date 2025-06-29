@@ -41,104 +41,55 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nav class="taskbar">
-    <div class="square-container">
-      <div class="square-item">
-        <div class="square" style="background-color: #d43b3b; color: black">1</div>
-        <div class="square-label">New</div>
+  <nav class="bg-blue-600 text-white p-4 flex items-center justify-between w-full box-border">
+    <div class="flex gap-2.5">
+      <div class="flex flex-col items-center gap-1.5">
+        <div
+          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl"
+          style="background-color: #d43b3b; color: black"
+        >
+          1
+        </div>
+        <div class="text-sm font-bold text-center">New</div>
       </div>
-      <div class="square-item">
-        <div class="square" style="background-color: #f3d633; color: black">2</div>
-        <div class="square-label">In Progress</div>
+      <div class="flex flex-col items-center gap-1.5">
+        <div
+          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl"
+          style="background-color: #f3d633; color: black"
+        >
+          2
+        </div>
+        <div class="text-sm font-bold text-center">In Progress</div>
       </div>
-      <div class="square-item">
-        <div class="square" style="background-color: #66ed7f; color: black">3</div>
-        <div class="square-label">Ready</div>
+      <div class="flex flex-col items-center gap-1.5">
+        <div
+          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl"
+          style="background-color: #66ed7f; color: black"
+        >
+          3
+        </div>
+        <div class="text-sm font-bold text-center">Ready</div>
       </div>
-      <div class="square-item">
-        <div class="square" style="background-color: #253338; color: white">4</div>
-        <div class="square-label">Served</div>
+      <div class="flex flex-col items-center gap-1.5">
+        <div
+          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl"
+          style="background-color: #253338; color: white"
+        >
+          4
+        </div>
+        <div class="text-sm font-bold text-center">Served</div>
       </div>
     </div>
 
-    <div class="taskbar-brand">
-      <a href="/" class="taskbar-logo">Something Creamy, Creamy Creations</a>
+    <div class="flex items-center">
+      <a href="/" class="text-white no-underline text-2xl font-bold">Creamy Creations</a>
     </div>
 
-    <div class="datetime-container">
-      <div class="date-display">{{ currentDate }}</div>
-      <div class="time-display">{{ currentTime }}</div>
+    <div class="flex flex-col items-end text-sm">
+      <div class="font-bold">{{ currentDate }}</div>
+      <div class="text-xl">{{ currentTime }}</div>
     </div>
   </nav>
 </template>
 
-<style scoped>
-.taskbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #0557e3;
-  padding: 1rem 2rem;
-  color: white;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.taskbar-brand {
-  display: flex;
-  align-items: center;
-}
-
-.taskbar-logo {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.square-container {
-  display: flex;
-  gap: 10px;
-}
-
-.square {
-  width: 60px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  font-weight: bold;
-  color: white;
-  font-size: 20px;
-}
-
-.square-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.square-label {
-  font-size: 0.9rem;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-}
-
-.datetime-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  font-size: 0.9rem;
-}
-
-.date-display {
-  font-weight: bold;
-}
-
-.time-display {
-  font-size: 1.3rem;
-}
-</style>
+<style scoped></style>
