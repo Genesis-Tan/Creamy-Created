@@ -45,8 +45,7 @@ onUnmounted(() => {
     <div class="flex gap-2.5">
       <div class="flex flex-col items-center gap-1.5">
         <div
-          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl"
-          style="background-color: #d43b3b; color: black"
+          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl bg-red-500 text-black"
         >
           1
         </div>
@@ -54,8 +53,7 @@ onUnmounted(() => {
       </div>
       <div class="flex flex-col items-center gap-1.5">
         <div
-          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl"
-          style="background-color: #f3d633; color: black"
+          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl bg-yellow-400 text-black"
         >
           2
         </div>
@@ -63,8 +61,7 @@ onUnmounted(() => {
       </div>
       <div class="flex flex-col items-center gap-1.5">
         <div
-          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl"
-          style="background-color: #66ed7f; color: black"
+          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl bg-green-400 text-black"
         >
           3
         </div>
@@ -72,8 +69,7 @@ onUnmounted(() => {
       </div>
       <div class="flex flex-col items-center gap-1.5">
         <div
-          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl"
-          style="background-color: #253338; color: white"
+          class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl bg-gray-800 text-white"
         >
           4
         </div>
@@ -91,5 +87,3 @@ onUnmounted(() => {
     </div>
   </nav>
 </template>
-
-<style scoped></style>
