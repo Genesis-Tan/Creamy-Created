@@ -1,0 +1,188 @@
+[
+  {
+    "tableNumber": 3,
+    "timestamp": "2025-07-04T08:30:15Z",
+    "orders": [
+      {
+        "itemName": "Cappuccino",
+        "size": "Large",
+        "addons": ["Extra Shot", "Vanilla Syrup"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Croissant",
+        "size": "Regular",
+        "addons": ["Butter", "Jam"],
+        "quantity": 2
+      },
+      {
+        "itemName": "Orange Juice",
+        "size": "Small",
+        "addons": [],
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "tableNumber": 12,
+    "timestamp": "2025-07-04T09:45:22Z",
+    "orders": [
+      {
+        "itemName": "Latte",
+        "size": "Medium",
+        "addons": ["Oat Milk", "Caramel Drizzle"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Avocado Toast",
+        "size": "Regular",
+        "addons": ["Everything Seasoning", "Cherry Tomatoes"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Matcha Latte",
+        "size": "Small",
+        "addons": ["Coconut Milk"],
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "tableNumber": 7,
+    "timestamp": "2025-07-04T11:20:08Z",
+    "orders": [
+      {
+        "itemName": "Americano",
+        "size": "Large",
+        "addons": [],
+        "quantity": 2
+      },
+      {
+        "itemName": "Blueberry Muffin",
+        "size": "Regular",
+        "addons": ["Warmed"],
+        "quantity": 3
+      },
+      {
+        "itemName": "Cold Brew",
+        "size": "Medium",
+        "addons": ["Vanilla Syrup", "Cream"],
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "tableNumber": 15,
+    "timestamp": "2025-07-04T13:10:45Z",
+    "orders": [
+      {
+        "itemName": "Mocha",
+        "size": "Large",
+        "addons": ["Whipped Cream", "Extra Chocolate"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Grilled Panini",
+        "size": "Regular",
+        "addons": ["Turkey", "Swiss Cheese", "Pesto"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Iced Coffee",
+        "size": "Medium",
+        "addons": ["Hazelnut Syrup"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Cheesecake Slice",
+        "size": "Regular",
+        "addons": ["Berry Compote"],
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "tableNumber": 2,
+    "timestamp": "2025-07-04T14:35:17Z",
+    "orders": [
+      {
+        "itemName": "Espresso",
+        "size": "Small",
+        "addons": [],
+        "quantity": 2
+      },
+      {
+        "itemName": "Tiramisu",
+        "size": "Regular",
+        "addons": [],
+        "quantity": 1
+      },
+      {
+        "itemName": "Sparkling Water",
+        "size": "Small",
+        "addons": ["Lemon Slice"],
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "tableNumber": 9,
+    "timestamp": "2025-07-04T16:22:33Z",
+    "orders": [
+      {
+        "itemName": "Frappuccino",
+        "size": "Large",
+        "addons": ["Extra Whipped Cream", "Caramel Sauce"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Bagel",
+        "size": "Regular",
+        "addons": ["Cream Cheese", "Smoked Salmon"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Green Tea",
+        "size": "Medium",
+        "addons": ["Honey"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Chocolate Chip Cookie",
+        "size": "Regular",
+        "addons": ["Warmed"],
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "tableNumber": 11,
+    "timestamp": "2025-07-04T18:50:12Z",
+    "orders": [
+      {
+        "itemName": "Chai Latte",
+        "size": "Medium",
+        "addons": ["Almond Milk", "Cinnamon"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Quinoa Salad",
+        "size": "Large",
+        "addons": ["Feta Cheese", "Balsamic Dressing"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Herbal Tea",
+        "size": "Small",
+        "addons": ["Lemon", "Honey"],
+        "quantity": 1
+      },
+      {
+        "itemName": "Banana Bread",
+        "size": "Regular",
+        "addons": ["Butter"],
+        "quantity": 1
+      }
+    ]
+  }
+]
