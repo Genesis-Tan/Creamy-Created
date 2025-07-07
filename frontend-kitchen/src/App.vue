@@ -22,10 +22,29 @@ import orders from './assets/mock-data.json'
             :orders="order.orders"
           />
         </div>
+        <!-- Column 2 -->
+        <div class="flex flex-col gap-5 overflow-y-auto no-scrollbar">
+          <Cards
+            v-for="order in orders"
+            :key="order.tableNumber"
+            :tableNumber="order.tableNumber"
+            :timestamp="order.timestamp"
+            :orders="order.orders"
+          />
+        </div>
+        <!-- Column 3 -->
+        <div class="flex flex-col gap-5 overflow-y-auto no-scrollbar">
+          <Cards
+            v-for="order in orders"
+            :key="order.tableNumber"
+            :tableNumber="order.tableNumber"
+            :timestamp="order.timestamp"
+            :orders="order.orders"
+          />
+        </div>
       </div>
     </main>
 
-    <!-- Optional Footer -->
     <footer class="bg-blue-600 text-white text-center p-2">&copy; vibecodersclub</footer>
   </div>
 </template>
