@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 
+defineProps<{
+  newCount: number
+  inProgressCount: number
+  readyCount: number
+  servedCount: number
+}>()
+
 const currentDate = ref('')
 const currentTime = ref('')
 let timer: number | undefined
@@ -47,7 +54,7 @@ onUnmounted(() => {
         <div
           class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl bg-red-500 text-black"
         >
-          1
+          {{ newCount }}
         </div>
         <div class="text-sm font-bold text-center">New</div>
       </div>
@@ -55,7 +62,7 @@ onUnmounted(() => {
         <div
           class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl bg-yellow-400 text-black"
         >
-          2
+          {{ inProgressCount }}
         </div>
         <div class="text-sm font-bold text-center">In Progress</div>
       </div>
@@ -63,7 +70,7 @@ onUnmounted(() => {
         <div
           class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl bg-green-400 text-black"
         >
-          3
+          {{ readyCount }}
         </div>
         <div class="text-sm font-bold text-center">Ready</div>
       </div>
@@ -71,7 +78,7 @@ onUnmounted(() => {
         <div
           class="w-15 h-10 flex justify-center items-center rounded-md font-bold text-xl bg-gray-800 text-white"
         >
-          4
+          {{ servedCount }}
         </div>
         <div class="text-sm font-bold text-center">Served</div>
       </div>
@@ -87,3 +94,9 @@ onUnmounted(() => {
     </div>
   </nav>
 </template>
+
+<style scoped>
+.w-15 {
+  width: 60px;
+}
+</style>
