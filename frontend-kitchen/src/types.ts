@@ -11,4 +11,6 @@ export interface Order {
   timestamp: string
   orders: OrderItem[]
   status: 'New' | 'In Progress' | 'Ready' | 'Served'
+  readyAt?: string
+  servedAt?: string
 }

@@ -46,6 +46,7 @@ const handleFinishOrder = (orderId: number) => {
   const order = orders.value.find((o) => o.id === orderId)
   if (order) {
     order.status = 'Ready'
+    order.readyAt = new Date().toISOString()
   }
 }
 
@@ -60,6 +61,7 @@ const handleServeOrder = (orderId: number) => {
   const order = orders.value.find((o) => o.id === orderId)
   if (order) {
     order.status = 'Served'
+    order.servedAt = new Date().toISOString()
   }
 }
 </script>
@@ -91,6 +93,8 @@ const handleServeOrder = (orderId: number) => {
               :timestamp="order.timestamp"
               :orders="order.orders"
               :status="order.status"
+              :ready-at="order.readyAt"
+              :served-at="order.servedAt"
               @start-order="handleStartOrder"
               @finish-order="handleFinishOrder"
               @undo-order="handleUndoOrder"

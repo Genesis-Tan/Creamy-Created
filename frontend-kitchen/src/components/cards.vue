@@ -7,6 +7,8 @@ export default {
     orders: Array,
     orderId: Number,
     status: String,
+    readyAt: String,
+    servedAt: String,
   },
   emits: ['start-order', 'finish-order', 'undo-order', 'serve-order'],
   data() {
@@ -29,7 +31,19 @@ export default {
       }
     },
     formattedTimestamp() {
-      const date = new Date(this.timestamp)
+      return this.formatTime(this.timestamp)
+    },
+    formattedReadyAt() {
+      return this.formatTime(this.readyAt)
+    },
+    formattedServedAt() {
+      return this.formatTime(this.servedAt)
+    },
+  },
+  methods: {
+    formatTime(timestamp) {
+      if (!timestamp) return ''
+      const date = new Date(timestamp)
       return date.toLocaleTimeString('en-US', {
         hour: '2-digit',
         minute: '2-digit',
@@ -37,8 +51,6 @@ export default {
         hour12: true,
       })
     },
-  },
-  methods: {
     updateElapsedTime() {
       const startTime = new Date(this.timestamp)
       const now = new Date()
@@ -65,12 +77,27 @@ export default {
     serveOrder() {
       this.$emit('serve-order', this.orderId)
     },
+    stopTimer() {
+      if (this.intervalId) {
+        clearInterval(this.intervalId)
+        this.intervalId = null
+      }
+    },
   },
   mounted() {
-    this.intervalId = setInterval(this.updateElapsedTime, 1000)
+    if (this.status !== 'Served') {
+      this.intervalId = setInterval(this.updateElapsedTime, 1000)
+    }
   },
   beforeUnmount() {
-    clearInterval(this.intervalId)
+    this.stopTimer()
+  },
+  watch: {
+    status(newStatus) {
+      if (newStatus === 'Served') {
+        this.stopTimer()
+      }
+    },
   },
 }
 </script>
@@ -79,8 +106,14 @@ export default {
   <div class="max-w-sm rounded shadow-lg m-4 bg-white rounded-t-lg">
     <div class="px-6 py-4 rounded-t-lg text-white force-bold" :class="headerColor">
       <div class="text-xl mb-2 force-bold">Table {{ tableNumber }}</div>
-      <p class="text-lg force-bold">Order Placed: {{ formattedTimestamp }}</p>
-      <p class="text-lg force-bold">Elapsed Time: {{ elapsedTime }}</p>
+      <template v-if="status === 'Served'">
+        <p class="text-lg force-bold">Order Ready: {{ formattedReadyAt }}</p>
+        <p class="text-lg force-bold">Order Served: {{ formattedServedAt }}</p>
+      </template>
+      <template v-else>
+        <p class="text-lg force-bold">Order Placed: {{ formattedTimestamp }}</p>
+        <p class="text-lg force-bold">Elapsed Time: {{ elapsedTime }}</p>
+      </template>
     </div>
     <div class="px-6 pt-4 pb-2">
       <div v-for="order in orders" :key="order.itemName" class="mb-4">
