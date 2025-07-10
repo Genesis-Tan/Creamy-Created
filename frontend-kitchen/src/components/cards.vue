@@ -15,6 +15,7 @@ export default {
     return {
       elapsedTime: '00:00:00',
       intervalId: null,
+      isCollapsed: true,
     }
   },
   computed: {
@@ -83,6 +84,9 @@ export default {
         this.intervalId = null
       }
     },
+    toggleCollapse() {
+      this.isCollapsed = !this.isCollapsed
+    },
   },
   mounted() {
     if (this.status !== 'Served') {
@@ -104,18 +108,22 @@ export default {
 
 <template>
   <div class="max-w-sm rounded shadow-lg m-4 bg-white rounded-t-lg">
-    <div class="px-6 py-4 rounded-t-lg text-white force-bold" :class="headerColor">
+    <div
+      class="px-6 py-4 rounded-t-lg text-white force-bold cursor-pointer"
+      :class="headerColor"
+      @click="toggleCollapse"
+    >
       <div class="text-xl mb-2 force-bold">Table {{ tableNumber }}</div>
+      <p class="text-lg force-bold">Order Placed: {{ formattedTimestamp }}</p>
       <template v-if="status === 'Served'">
         <p class="text-lg force-bold">Order Ready: {{ formattedReadyAt }}</p>
         <p class="text-lg force-bold">Order Served: {{ formattedServedAt }}</p>
       </template>
       <template v-else>
-        <p class="text-lg force-bold">Order Placed: {{ formattedTimestamp }}</p>
         <p class="text-lg force-bold">Elapsed Time: {{ elapsedTime }}</p>
       </template>
     </div>
-    <div class="px-6 pt-4 pb-2">
+    <div v-if="!isCollapsed" class="px-6 pt-4 pb-2">
       <div v-for="order in orders" :key="order.itemName" class="mb-4">
         <span
           class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
